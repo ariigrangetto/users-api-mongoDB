@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+{{#if user}}
+  <p>Nombre: {{user.firstName}}</p>
+  <p>Apellido: {{user.lastName}}</p>
+  <p>Edad: {{user.age}}</p>
+  <p>Género: {{user.gender}}</p>
+  <p>Email: {{user.email}}</p>
+  <p>Teléfono: {{user.phone}}</p>
+  <p>Nacimiento: {{user.birthDate}}</p>
+{{else}}
+  <p>Ups, parece que no encontramos ese usuario. Vuelve a intentarlo</p>
+{{/if}}
