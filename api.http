@@ -7,9 +7,6 @@ GET http://localhost:8080/users/68fb883783c48074d41389ec
 ###Recuperar usuario por firstName 
 GET http://localhost:8080/users/name/Emily
 
-###Eliminar usuarios por id
-DELETE http://localhost:8080/users/68fb883783c48074d41389ed
-
 ###Crear usuario 
 POST http://localhost:8080/users
 Content-Type: application/json
@@ -86,8 +83,7 @@ Content-Type: application/json
 
 
 ###Actualizar usuario por id
-
-PATCH http://localhost:8080/users/2
+PATCH http://localhost:8080/users/68fb883783c48074d41389ec
 Content-Type: application/json
 
 {
@@ -96,3 +92,6 @@ Content-Type: application/json
     "maidenName": "Smith",
     "age": 22
 }
+
+###Eliminar usuarios por id
+DELETE http://localhost:8080/users/68fb883783c48074d41389ed

@@ -19,7 +19,7 @@ router.post("/", controlles.postUser);
 
 router.delete("/:id", controlles.deleteUser);
 
-//PATH --------------------------------------
+//PATCH --------------------------------------
 
 router.patch("/:id", controlles.patchUser);
 

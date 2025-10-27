@@ -10,10 +10,10 @@ app.disable("x-powered-by");
 //puedo pasarle cuales son las url permitidas
 app.use(cors());
 
-//middleware global por lo tanto va arriba de todo
+//middleware global
 app.use(express.json());
 
-//setting handlebars
+//setting handlebars NO UTILIZADO HASTA EL MOMENTO
 app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.set("views", "./views");

@@ -10,7 +10,7 @@ const getUsers = (req, res) => {
     .catch((err) => {
       res
         .status(500) //error del servidor
-        .json({ message: "Error interno del servidor", error: err.message });
+        .json({ message: "internal service error", error: err.message });
     });
 
   // res.render("users", {
@@ -27,9 +27,7 @@ const getUser = (req, res) => {
       res.status(201).json({ message: "ok", user });
     })
     .catch((err) => {
-      res
-        .status(404) //not found
-        .json({ message: "Usuario no encontrado", error: err.message });
+      res.status(404).json({ message: "User not found", error: err.message });
     });
   // res.render("user", {
   //   title: "Usuario",
@@ -45,9 +43,7 @@ const getUserName = (req, res) => {
       res.status(201).json({ message: "ok", user });
     })
     .catch((err) => {
-      res
-        .status(404) //not found
-        .json({ message: "Usuario no encontrado", error: err.message });
+      res.status(404).json({ message: "User not found", error: err.message });
     });
 
   // res.render("user", {
@@ -73,15 +69,13 @@ const postUser = (req, res) => {
     .catch((err) => {
       res
         .status(404)
-        .json({ message: "Usuario no pudo ser creado", error: err.message });
+        .json({ message: "User cannot be created", error: err.message });
     });
   // res.render("user", {
   //   title: "Nuevo usuario",
   //   user: newUser,
   // });
 };
-
-//Actualizar parcialmente un usuario
 
 const patchUser = (req, res) => {
   const { id } = req.params;
@@ -98,9 +92,8 @@ const patchUser = (req, res) => {
       res.status(201).json({ message: "ok", user });
     })
     .catch((err) => {
-      //json no recive segundo parametro
       res.status(404).json({
-        message: "Usuario no pudo ser modificado",
+        message: "User cannot be modified",
         error: err.message,
       });
     });
@@ -121,7 +114,7 @@ const deleteUser = (req, res) => {
     })
     .catch((err) => {
       res.status(404).json({
-        message: "Usuario no puede ser eliminado",
+        message: "User cannot be deleted",
         error: err.message,
       });
     });

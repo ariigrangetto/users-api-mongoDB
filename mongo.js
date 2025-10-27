@@ -8,7 +8,6 @@ if (!connectionString) {
   process.exit(1);
 }
 
-//la conexion a mongoose es asincrono
 //si utilizo una sola base de datos es connect, en caso contrario es .creatConnection
 mongoose
   .connect(connectionString)
