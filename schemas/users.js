@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 const usersSchema = z.object({
-  id: z.number(),
   firstName: z.string(),
   lastName: z.string(),
   maidenName: z.string(),
