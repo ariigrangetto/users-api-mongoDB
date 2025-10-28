@@ -2,10 +2,10 @@
 GET http://localhost:8080/users
 
 ###Recuperar usuario por id
-GET http://localhost:8080/users/68fb883783c48074d41389ec
+GET http://localhost:8080/users/1
 
 ###Recuperar usuario por firstName 
-GET http://localhost:8080/users/name/Emily
+GET http://localhost:8080/users/name/Sophia
 
 ###Crear usuario 
 POST http://localhost:8080/users
@@ -83,7 +83,7 @@ Content-Type: application/json
 
 
 ###Actualizar usuario por id
-PATCH http://localhost:8080/users/68fb883783c48074d41389ec
+PATCH http://localhost:8080/users/2
 Content-Type: application/json
 
 {
@@ -94,4 +94,4 @@ Content-Type: application/json
 }
 
 ###Eliminar usuarios por id
-DELETE http://localhost:8080/users/68fb883783c48074d41389ed
+DELETE http://localhost:8080/users/1
