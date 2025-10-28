@@ -1,26 +1,30 @@
-import express from "express";
-import controlles from "../constrollers/users.js";
-const router = express.Router();
-import "dotenv/config";
+import { ModelController } from "../constrollers/users.js";
+import { Router } from "express";
 
-// GET --------------------------------------------
+export const createUserRouter = ({ userModel }) => {
+  const userRouter = Router();
 
-router.get("/", controlles.getUsers);
+  //generando instancia
+  const userController = new ModelController({ userModel });
+  // GET --------------------------------------------
 
-router.get("/:id", controlles.getUser);
+  userRouter.get("/", userController.getUsers);
 
-router.get("/name/:firstName", controlles.getUserName);
+  userRouter.get("/:id", userController.getUser);
 
-//POST -------------------------------------
+  userRouter.get("/name/:firstName", userController.getUserFirstName);
 
-router.post("/", controlles.postUser);
+  //POST -------------------------------------
 
-//DELETE ------------------------------------
+  userRouter.post("/", userController.postUser);
 
-router.delete("/:id", controlles.deleteUser);
+  //DELETE ------------------------------------
 
-//PATCH --------------------------------------
+  userRouter.delete("/:id", userController.deleteUser);
 
-router.patch("/:id", controlles.patchUser);
+  //PATCH --------------------------------------
 
-export default router;
+  userRouter.patch("/:id", userController.patchUser);
+
+  return userRouter;
+};
