@@ -87,9 +87,9 @@ export const User = model("User", usersSchema);
 const insertUsers = async () => {
     try{
         const result = await User.insertMany(users);
-        console.log(`${result.length} usuarios insertados`);
+        console.log(`${result.length} inserted users`);
     } catch(err){
-        console.error(`Error al insertar los usuarios`, err);
+        console.error(`Error inserting users`, err);
     }
 }
 
@@ -111,7 +111,7 @@ export class UserModel {
     return User.find({})
       .then((users) => users)
       .catch((err) => {
-        console.error("Error al obtener los usuarios", err);
+        console.error("Error getting users", err);
         throw err; // propagar el error
       });
   };
@@ -120,7 +120,7 @@ export class UserModel {
     return User.findById(id)
       .then((user) => user)
       .catch((err) => {
-        console.error(`Error al obtener el usuario con id: ${id}`, err);
+        console.error(`Error getting user with id: ${id}`, err);
         throw err;
       });
   };
@@ -129,7 +129,7 @@ export class UserModel {
     return User.find({ firstName: firstName })
       .then((user) => user)
       .catch((err) => {
-        console.error(`Error al buscar usuarios con nombre: ${firstName}`, err);
+        console.error(`Error searching for users by name: ${firstName}`, err);
         throw err;
       });
   };
@@ -138,7 +138,7 @@ export class UserModel {
     return User.create(user)
       .then((user) => user)
       .catch((err) => {
-        console.error("Error al crear el usuario", err);
+        console.error("Error creating user", err);
         throw err;
       });
   };
@@ -147,7 +147,7 @@ export class UserModel {
     return User.findByIdAndUpdate(id, updateData, { new: true })
       .then((user) => user)
       .catch((err) => {
-        console.error("Error al actualizar el usuario", err);
+        console.error("Error finding user", err);
         throw err;
       });
   };
@@ -156,7 +156,7 @@ export class UserModel {
     return User.findByIdAndDelete(id)
       .then((user) => user)
       .catch((err) => {
-        console.error("Error al eliminar el usuario", err);
+        console.error("Error finding user", err);
         throw err;
       });
   };
