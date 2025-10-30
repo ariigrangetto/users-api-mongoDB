@@ -4,7 +4,6 @@ import { Router } from "express";
 export const createUserRouter = ({ userModel }) => {
   const userRouter = Router();
 
-  //generando instancia
   const userController = new ModelController({ userModel });
   // GET --------------------------------------------
 
